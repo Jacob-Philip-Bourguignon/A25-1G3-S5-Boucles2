@@ -12,13 +12,14 @@ def retrait(solde: float, montant: float) -> float:
         print("* Retrait refusé (montant invalide)")
         return solde
 
-    if montant > solde:
+    elif montant > solde:
         print(f"* Solde insuffisant, retrait effectué: {solde} $")
         return 0  # tout le solde est retiré
 
-    solde -= montant
-    print(f"* Retrait effectué: {montant} $")
-    return solde
+    else:
+        solde -= montant
+        print(f"* Retrait effectué: {montant} $")
+        return solde
 
 
 if __name__ == "__main__":
@@ -31,10 +32,10 @@ if __name__ == "__main__":
     print(f"Solde initial:  {solde} $")
     print("*************************")
 
-    retrait_1 = float(input("Retrait 1: Combien voulez-vous retirer? "))
+    retrait_1 = float(input("Retrait 1: Combien voulez-vous retirer?:  "))
     solde = retrait(solde, retrait_1)
 
-    retrait_2 = float(input("Retrait 2: Combien voulez-vous retirer? "))
+    retrait_2 = float(input("Retrait 2: Combien voulez-vous retirer?:  "))
     solde = retrait(solde, retrait_2)
 
     print("*********************")
